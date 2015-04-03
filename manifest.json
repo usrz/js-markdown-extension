@@ -3,7 +3,7 @@
 
   "name": "GitHub Flavored Markdown",
   "description": "Preview GitHub Flavored Markdown in Chrome",
-  "version": "0.0.2",
+  "version": "0.0.3",
 
   "icons": {
     "128": "icons/icon.png",
