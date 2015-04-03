@@ -1,0 +1,56 @@
+{
+  "manifest_version": 2,
+
+  "name": "GitHub Flavored Markdown",
+  "description": "Preview GitHub Flavored Markdown in Chrome",
+  "version": "0.0.2",
+
+  "icons": {
+    "128": "icons/icon.png",
+    "48": "icons/icon-48.png",
+    "16": "icons/icon-16.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*.md",
+        "http://*/*.mdown",
+        "http://*/*.markdown",
+        "https://*/*.md",
+        "https://*/*.mdown",
+        "https://*/*.markdown",
+        "file://*/*.md",
+        "file://*/*.mdown",
+        "file://*/*.markdown"
+      ],
+      "js": [
+        "js/highlight.js",
+        "js/marked.js",
+        "js/plugin.js"
+      ]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/icon-38.png",
+    "default_title": "GitHub Flavored Markdown"
+  },
+
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+
+  "permissions": [
+    "storage"
+  ],
+
+  "web_accessible_resources": [
+    "css/default.css",
+    "css/github.css",
+    "css/markdown.css",
+    "css/page.css"
+  ]
+}
