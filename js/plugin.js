@@ -56,7 +56,7 @@ chrome.storage.local.get({enabled: true}, function(config) {
   // Recreate the body given some markdown text
   function render(markdown) {
     // Highlight as markdown, and render markdown
-    var highlighted = hljs.highlight('markdown', markdown).value;
+    var highlighted = hljs.highlight('markdown', markdown, true).value;
     var rendered = marked.parse(markdown);
 
     // Setup the document's body
