@@ -42,8 +42,8 @@ chrome.storage.local.get({enabled: true}, function(config) {
     lang = lang && lang.toLowerCase();
 
     // Is this a known language or autodetect?
-    if (lang && languages[lang.toLowerCase()]) {
-      data = hljs.highlight(lang, data);
+    if (lang && languages[lang]) {
+      data = hljs.highlight(languages[lang], data, true);
     } else {
       data = hljs.highlightAuto(data);
     }
@@ -101,6 +101,8 @@ chrome.storage.local.get({enabled: true}, function(config) {
         }
 
       }, 2000);
+    } else {
+      console.info("Not checking for changes on " + window.location.href + ", reload manually");
     }
   }
 
