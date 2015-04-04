@@ -15,8 +15,16 @@
 }
 
 .markdown-body {
-    min-width: 200px;
-    max-width: 790px;
-    margin: 0 auto;
-    padding: 30px;
+  min-width: 200px;
+  max-width: 790px;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.markdown-source {
+  background: none;
+  margin: 0px;
+  padding: 0px;
 }
