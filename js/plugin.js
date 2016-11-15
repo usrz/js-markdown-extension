@@ -44,16 +44,13 @@ if ((type === 'text/plain') || (type === 'text/markdown') || (type === 'text/x-m
       // Language case normalization
       lang = lang && lang.toLowerCase();
 
-      // Is this a known language or autodetect?
+      // Wrap any known language in our HLJS tag (or no highlight)
       if (lang && languages[lang]) {
-        data = hljs.highlight(languages[lang], data, true);
+        var tmp = hljs.highlight(languages[lang], data, true);
+        return '<code class="hljs ' + tmp.language + '">' + tmp.value + '</code>';
       } else {
-        data = hljs.highlightAuto(data);
+        return '<code class="hljs">' + data + '</code>';
       }
-
-      // Wrap in a class with whatever language we found
-      return '<code class="hljs ' + data.language + '">' + data.value + '</code>';
-
     }});
 
     // Recreate the body given some markdown text
