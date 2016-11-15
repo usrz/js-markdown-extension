@@ -1,6 +1,6 @@
 var type = (document.contentType || 'unknown').toLowerCase();
 
-if ((type === 'text/plain') || (type === 'text/markdown')) {
+if ((type === 'text/plain') || (type === 'text/markdown') || (type === 'text/x-markdown')) {
   chrome.storage.local.get({enabled: true}, function(config) {
 
     // Local variables
